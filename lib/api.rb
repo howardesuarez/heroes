@@ -18,7 +18,7 @@ class Heroes::API
         bio = @results[0]["biography"]
         appearance = @results[0]["appearance"]
         connections = @results[0]["connections"]
-        Hero.new(name,bio,appearance,connecions)
+        Hero.new(name,bio,appearance,connections)
 
     end
 
