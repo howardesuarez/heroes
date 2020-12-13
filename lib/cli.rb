@@ -1,5 +1,5 @@
-class Heroes::class
-    def initialize
+class Heroes::CLI
+    def call
         
     end
 end

@@ -1,4 +1,3 @@
-require_relative '../confi/environment.rb'
 
 class Heroes::API
 
