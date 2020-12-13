@@ -3,4 +3,4 @@
 
 require_relative "../config/environment.rb"
 
-#Heroes::CLI.new.run
+CLI.new.call

@@ -1,5 +1,5 @@
 
-class Heroes::API
+class API
 
     def self.get_hero(name)
         url ="https://superheroapi.com/api/4206379799379271/search/#{name}"
@@ -10,7 +10,7 @@ class Heroes::API
         cli = CLI.new
             if object["response"] == "error"
              puts "This Hero is not in our database, apologies."   
-            cli.replay
+            cli.another_one
          else
      end
 
@@ -20,9 +20,4 @@ class Heroes::API
         Hero.new(name,bio,appearance,connections)
 
     end
-
-
-
-
-
 end
