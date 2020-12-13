@@ -33,12 +33,15 @@ class CLI
     end
 
     def another_one
-        puts " Looking for anyone else? Yes or No?"
-            if "Yes"
-                puts menu
-            else 
-                puts "Thank you for using Heroes Database"
-            exit
+        puts "Looking for anyone else?"
+        array = ["Yes", "No"]
+        puts array
+        choice = gets.chomp.upcase!
+        if choice == array[0]
+         menu
+        else        
+          puts "Thank's for using the Heroes database."
+          exit
         end
     end
 
