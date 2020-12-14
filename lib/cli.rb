@@ -41,6 +41,7 @@ class CLI
         puts "You have now activated the Heroes database."
         menu
         another_one
+        
 
 
     end
@@ -68,20 +69,24 @@ class CLI
         else
             puts "This isn't in the database."
         end
+
+       
     end
 
     def another_one
+        
         puts "Looking for anyone else? y/n"
+        array = ["y","n"]
         
         input = gets.chomp.upcase!
-        if input = "y"
+            if input == array[0]
         
-            menu
+                menu
         
-        else        
-          puts "Thank's for using the Heroes database."
-          exit
-        end
+            else        
+                puts "Thank's for using the Heroes database."
+                exit
+            end
     end
 
 
