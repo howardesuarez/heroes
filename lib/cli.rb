@@ -39,6 +39,8 @@ class CLI
       
         "
         puts "You have now activated the Heroes database."
+       
+       
         menu
         another_one
         
@@ -74,22 +76,17 @@ class CLI
     end
 
     def another_one
+
+        input = nil
+        while input != "exit"
+            puts "Type menu to look for someone else or type exit to exit"
+            input = gets.strip.downcase
         
-        puts "Looking for anyone else? y/n"
-        array = ["y","n"]
-        
-        input = gets.chomp.upcase!
-            if input == array[0]
-        
+            if input == "menu"
                 menu
-        
             else        
                 puts "Thank's for using the Heroes database."
-                exit
             end
+        end
     end
-
-
-        
-
 end
