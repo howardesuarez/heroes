@@ -84,7 +84,7 @@ class CLI
         
             if input == "menu"
                 menu
-            else        
+            else         
                 puts "Thank's for using the Heroes database."
             end
         end

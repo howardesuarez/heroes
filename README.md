@@ -9,4 +9,4 @@ After giving it permission to run, just run the bin file 'bin/heroes' in your te
 
 ## License
 
-[MIT]
+[MIT] (https://github.com/howardesuarez/heroes/blob/main/LICENSE)
