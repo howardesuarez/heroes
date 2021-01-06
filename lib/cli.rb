@@ -39,6 +39,7 @@ class CLI
       
         "
         puts "You have now activated the Heroes database."
+
        
        
         menu
@@ -50,11 +51,18 @@ class CLI
     end
 
     def menu
-
-        puts "Who are you looking for?"
-
-        
        
+        puts "Who are you looking for?"
+        input = nil
+        while input != "exit"
+            input = gets.chomp.upcase!
+
+            if input = "exit"
+                puts "Thank you for using Heroes Database"
+                exit!
+            end
+        end
+
         @name = gets.strip.downcase
         new_hero = API.get_hero(@name)
 
@@ -64,18 +72,22 @@ class CLI
         array = ["BIO","LOOKS","CREW"]
         puts array
 
+        input = nil
+        while input != "exit"
+            input = gets.chomp.upcase!
 
-        input = gets.chomp.upcase!
-
-        
-        if input == array[0]
-            puts new_hero.biography
-        elsif input == array[1]
-            puts new_hero.appearance
-        elsif input == array[2]
-            puts new_hero.connections
-        else
-            puts "This isn't in the database."
+            if input = "exit"
+                puts "Thank you for using Heroes Database"
+                exit!
+            elsif input == array[0]
+                puts new_hero.biography
+            elsif input == array[1]
+                puts new_hero.appearance
+            elsif input == array[2]
+                puts new_hero.connections
+            else
+                puts "This isn't in the database."
+            end
         end
 
        
