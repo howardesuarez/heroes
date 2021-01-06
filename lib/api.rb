@@ -6,8 +6,6 @@ class API
         response = Net::HTTP.get(URI(url))
         object = JSON.parse(response)
         results = object["results"]
-        
-
         bio = results[0]["biography"]
         appearance = results[0]["appearance"]
         connections = results[0]["connections"]

@@ -72,36 +72,27 @@ class CLI
                 goodbye
             elsif input == array[0]
                 puts new_hero.biography
-                puts "Type LOOKS or CREW for more info or  to terminate."
+                puts "Type LOOKS or CREW for more info, MENU to start again or EXIT to terminate."
             elsif input == array[1]
                 puts new_hero.appearance
-                puts "Type BIO or CREW for more info or EXIT to Terminate."
+                puts "Type BIO or CREW for more info, MENU to start again or EXIT to Terminate."
             elsif input == array[2]
                 puts new_hero.connections
-                puts "Type LOOKS or BIO for more info or EXIT to Terminate."
+                puts "Type LOOKS or BIO for more info, MENU to start again or EXIT to Terminate."
+            elsif input == "MENU"
+                menu
            else
                 puts "This isn't in the database."
             end
-        end
 
+        
+
+        end
+        
        
     end
 
-    def another_one
 
-        input = nil
-        while input != "exit"
-            puts "Type menu to look for someone else or type exit to exit"
-            input = gets.strip.downcase
-            if input == "exit"
-                goodbye
-            elsif input == "menu"
-                menu
-            else
-                puts "This isn't in the database."
-            end
-        end
-    end
 
     def goodbye
         puts "Thank you for using Heroes Database!"
