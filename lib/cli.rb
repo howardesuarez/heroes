@@ -68,16 +68,18 @@ class CLI
         while input != "exit"
             input = gets.chomp.upcase!
 
-            if input = "exit"
-                puts "Thank you for using Heroes Database"
-                exit!
+            if input == "EXIT"
+                goodbye
             elsif input == array[0]
                 puts new_hero.biography
+                puts "Type LOOKS or CREW for more info or  to terminate."
             elsif input == array[1]
                 puts new_hero.appearance
+                puts "Type BIO or CREW for more info or EXIT to Terminate."
             elsif input == array[2]
                 puts new_hero.connections
-            else
+                puts "Type LOOKS or BIO for more info or EXIT to Terminate."
+           else
                 puts "This isn't in the database."
             end
         end
@@ -91,21 +93,26 @@ class CLI
         while input != "exit"
             puts "Type menu to look for someone else or type exit to exit"
             input = gets.strip.downcase
-            if input = "exit"
-                puts "Thank you for using Heroes Database"
-                exit!
+            if input == "exit"
+                goodbye
             elsif input == "menu"
                 menu
-            else   
-                puts "INPUT ERROR: Please try again."
+            else
+                puts "This isn't in the database."
             end
         end
     end
 
-    cli = CLI.new
-        if object["response"] == "error"
-           puts "This Hero is not in our database, apologies."   
-          cli.another_one
+    def goodbye
+        puts "Thank you for using Heroes Database!"
+        exit!
+    end
+
+
+        #cli = CLI.new
+        #if object["response"] == "error"
+        #   puts "This Hero is not in our database, apologies."   
+        #  cli.another_one
     
 
 end
