@@ -7,13 +7,6 @@ class API
         object = JSON.parse(response)
         results = object["results"]
 
-        cli = CLI.new
-        if object["response"] == "error"
-           puts "This Hero is not in our database, apologies."   
-          cli.another_one
-    
-     end
-
         bio = results[0]["biography"]
         appearance = results[0]["appearance"]
         connections = results[0]["connections"]
@@ -21,3 +14,6 @@ class API
 
     end
 end
+
+
+

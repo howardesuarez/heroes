@@ -53,15 +53,7 @@ class CLI
     def menu
        
         puts "Who are you looking for?"
-        input = nil
-        while input != "exit"
-            input = gets.chomp.upcase!
-
-            if input = "exit"
-                puts "Thank you for using Heroes Database"
-                exit!
-            end
-        end
+        
 
         @name = gets.strip.downcase
         new_hero = API.get_hero(@name)
@@ -110,6 +102,10 @@ class CLI
         end
     end
 
+    cli = CLI.new
+        if object["response"] == "error"
+           puts "This Hero is not in our database, apologies."   
+          cli.another_one
     
 
 end
