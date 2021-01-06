@@ -44,6 +44,7 @@ class CLI
         menu
         another_one
         
+        
 
 
     end
@@ -51,16 +52,21 @@ class CLI
     def menu
 
         puts "Who are you looking for?"
+
+        
        
         @name = gets.strip.downcase
         new_hero = API.get_hero(@name)
+
         
         puts "What do you need to know about em? Choose below"
         
         array = ["BIO","LOOKS","CREW"]
         puts array
 
+
         input = gets.chomp.upcase!
+
         
         if input == array[0]
             puts new_hero.biography
@@ -81,12 +87,17 @@ class CLI
         while input != "exit"
             puts "Type menu to look for someone else or type exit to exit"
             input = gets.strip.downcase
-        
-            if input == "menu"
+            if input = "exit"
+                puts "Thank you for using Heroes Database"
+                exit!
+            elsif input == "menu"
                 menu
-            else         
-                puts "Thank's for using the Heroes database."
+            else   
+                puts "INPUT ERROR: Please try again."
             end
         end
     end
+
+    
+
 end
